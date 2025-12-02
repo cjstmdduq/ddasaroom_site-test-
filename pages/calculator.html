@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적계산기 - 따사룸</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1><a href="../index.html">ddasaroom</a></h1>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../index.html#brand" class="nav-link">브랜드소개</a>
+                <a href="products.html" class="nav-link">판매제품</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link active">편의도구</a>
+                    <div class="dropdown-content">
+                        <a href="#calculator">견적계산기</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-link">고객센터</a>
+                <a href="#" class="nav-link nav-cta">스토어 가기</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>견적계산기</h1>
+                <p>맞춤형 매트 가격을 쉽고 빠르게 계산해보세요</p>
+            </div>
+
+            <div class="calculator-section">
+                <div class="calculator-form">
+                    <h2>매트 견적 계산</h2>
+                    <form id="price-calculator">
+                        <div class="form-group">
+                            <label for="mat-type">매트 종류</label>
+                            <select id="mat-type" name="matType">
+                                <option value="">선택해주세요</option>
+                                <option value="6-110">6mm - 110cm</option>
+                                <option value="6-125">6mm - 125cm</option>
+                                <option value="6-140">6mm - 140cm</option>
+                                <option value="9-110">9mm - 110cm</option>
+                                <option value="9-125">9mm - 125cm</option>
+                                <option value="9-140">9mm - 140cm</option>
+                                <option value="12-110">12mm - 110cm</option>
+                                <option value="12-125">12mm - 125cm</option>
+                                <option value="12-140">12mm - 140cm</option>
+                                <option value="14-110">14mm - 110cm</option>
+                                <option value="14-125">14mm - 125cm</option>
+                                <option value="14-140">14mm - 140cm</option>
+                                <option value="17-70">17mm - 70cm</option>
+                                <option value="17-110">17mm - 110cm</option>
+                                <option value="17-125">17mm - 125cm</option>
+                                <option value="17-140">17mm - 140cm</option>
+                                <option value="22-110">22mm - 110cm</option>
+                                <option value="22-125">22mm - 125cm</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="length">길이 (cm)</label>
+                            <input type="number" id="length" name="length" min="50" step="10" placeholder="예: 200">
+                        </div>
+
+                        <button type="submit" class="calculate-btn">견적 계산하기</button>
+                    </form>
+
+                    <div id="result" class="calculation-result" style="display: none;">
+                        <h3>계산 결과</h3>
+                        <div class="result-details">
+                            <p><strong>선택한 매트:</strong> <span id="selected-mat"></span></p>
+                            <p><strong>길이:</strong> <span id="selected-length"></span>cm</p>
+                            <p><strong>기준 가격:</strong> <span id="base-price"></span>원</p>
+                            <p><strong>길이 계수:</strong> <span id="length-factor"></span></p>
+                            <div class="total-price">
+                                <h4>총 가격: <span id="total-price"></span>원</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="price-guide">
+                    <h3>가격 안내</h3>
+                    <div class="price-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>두께</th>
+                                    <th>폭</th>
+                                    <th>기준가격 (50cm)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>6mm</td><td>110cm</td><td>10,400원</td></tr>
+                                <tr><td>6mm</td><td>125cm</td><td>11,900원</td></tr>
+                                <tr><td>6mm</td><td>140cm</td><td>13,200원</td></tr>
+                                <tr><td>9mm</td><td>110cm</td><td>10,900원</td></tr>
+                                <tr><td>9mm</td><td>125cm</td><td>12,300원</td></tr>
+                                <tr><td>9mm</td><td>140cm</td><td>13,500원</td></tr>
+                                <tr><td>12mm</td><td>110cm</td><td>12,600원</td></tr>
+                                <tr><td>12mm</td><td>125cm</td><td>14,500원</td></tr>
+                                <tr><td>12mm</td><td>140cm</td><td>16,800원</td></tr>
+                                <tr><td>14mm</td><td>110cm</td><td>13,600원</td></tr>
+                                <tr><td>14mm</td><td>125cm</td><td>15,600원</td></tr>
+                                <tr><td>14mm</td><td>140cm</td><td>17,800원</td></tr>
+                                <tr><td>17mm</td><td>70cm</td><td>10,700원</td></tr>
+                                <tr><td>17mm</td><td>110cm</td><td>13,800원</td></tr>
+                                <tr><td>17mm</td><td>125cm</td><td>16,100원</td></tr>
+                                <tr><td>17mm</td><td>140cm</td><td>18,200원</td></tr>
+                                <tr><td>22mm</td><td>110cm</td><td>19,100원</td></tr>
+                                <tr><td>22mm</td><td>125cm</td><td>20,900원</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="note">* 기준 가격 × (길이cm ÷ 50) = 최종 가격</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>따사룸</h3>
+                    <p>프리미엄 유아ㆍ반려견 매트 전문 브랜드</p>
+                    <p>since 2006</p>
+                </div>
+                <div class="footer-section">
+                    <h4>제품</h4>
+                    <ul>
+                        <li><a href="products.html">유아매트</a></li>
+                        <li><a href="products.html">강아지매트</a></li>
+                        <li><a href="#calculator">견적계산기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="contact.html">고객센터</a></li>
+                        <li><a href="#">배송안내</a></li>
+                        <li><a href="#">교환/반품</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DDASAROOM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/calculator.js"></script>
+</body>
+</html>
