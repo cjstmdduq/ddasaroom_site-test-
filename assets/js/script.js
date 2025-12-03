@@ -1,53 +1,42 @@
 // DOM 요소들
 const hamburger = document.getElementById('hamburger');
-const mobileNavMenu = document.getElementById('mobile-nav-menu');
-const pcToggleMenu = document.getElementById('pc-toggle-menu');
+const toggleMenu = document.getElementById('pc-toggle-menu');
 const navbar = document.getElementById('navbar');
 const floatingButtons = document.querySelector('.floating-buttons');
 
-// 현재 활성화된 메뉴 확인 (반응형 대응)
-function getActiveMenu() {
-    return window.innerWidth <= 480 ? mobileNavMenu : pcToggleMenu;
-}
-
 // 햄버거 메뉴 토글
 hamburger.addEventListener('click', () => {
-    const activeMenu = getActiveMenu();
     hamburger.classList.toggle('active');
-    activeMenu.classList.toggle('active');
+    toggleMenu.classList.toggle('active');
 });
 
 // 메뉴 링크 클릭 시 메뉴 닫기
-document.querySelectorAll('#mobile-nav-menu .nav-link, #pc-toggle-menu .nav-link').forEach(link => {
+document.querySelectorAll('#pc-toggle-menu .nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
-        mobileNavMenu.classList.remove('active');
-        pcToggleMenu.classList.remove('active');
+        toggleMenu.classList.remove('active');
     });
 });
 
 // ESC 키로 메뉴 닫기
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        if (mobileNavMenu.classList.contains('active') || pcToggleMenu.classList.contains('active')) {
+        if (toggleMenu.classList.contains('active')) {
             hamburger.classList.remove('active');
-            mobileNavMenu.classList.remove('active');
-            pcToggleMenu.classList.remove('active');
+            toggleMenu.classList.remove('active');
         }
     }
 });
 
 // 메뉴 외부 클릭 시 메뉴 닫기
 document.addEventListener('click', (e) => {
-    const isMenuOpen = mobileNavMenu.classList.contains('active') || pcToggleMenu.classList.contains('active');
-    const clickedOutside = !mobileNavMenu.contains(e.target) &&
-                          !pcToggleMenu.contains(e.target) &&
+    const isMenuOpen = toggleMenu.classList.contains('active');
+    const clickedOutside = !toggleMenu.contains(e.target) &&
                           !hamburger.contains(e.target);
 
     if (isMenuOpen && clickedOutside) {
         hamburger.classList.remove('active');
-        mobileNavMenu.classList.remove('active');
-        pcToggleMenu.classList.remove('active');
+        toggleMenu.classList.remove('active');
     }
 });
 

@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -53,28 +54,65 @@
                 <span></span>
             </button>
         </div>
-        <!-- 모바일용 토글 메뉴 (왼쪽에서 나타남) -->
-        <div class="mobile-nav-menu" id="mobile-nav-menu">
-            <div class="nav-menu-content">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="#brand" class="nav-link">브랜드소개</a>
-                <a href="pages/products.html" class="nav-link">판매제품</a>
-                <a href="pages/calculator.html" class="nav-link">견적계산기</a>
-                <a href="pages/contact.html" class="nav-link">고객센터</a>
-                <a href="https://brand.naver.com/ddasaroom" class="nav-link nav-cta" target="_blank">
-                    <i class="fas fa-shopping-bag"></i> 스토어 가기
-                </a>
-            </div>
-        </div>
 
-        <!-- PC용 토글 메뉴 (오른쪽에서 나타남) -->
+        <!-- 토글 메뉴 -->
         <div class="pc-toggle-menu" id="pc-toggle-menu">
             <div class="nav-menu-content">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Home</a>
                 <a href="#brand" class="nav-link">브랜드소개</a>
-                <a href="pages/products.html" class="nav-link">판매제품</a>
+
+                <div class="nav-divider"></div>
+
+                <a href="https://brand.naver.com/ddasaroom/products/6092903705" class="nav-link nav-link-product" target="_blank">
+                    <span>유아 PVC롤매트</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product1.png" alt="유아 PVC롤매트">
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/5994906898" class="nav-link nav-link-product" target="_blank">
+                    <span>PE 퍼즐매트</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product2.png" alt="PE 퍼즐매트">
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/5569937047" class="nav-link nav-link-product" target="_blank">
+                    <span>TPU매트</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product3.png" alt="TPU매트">
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/6710830644" class="nav-link nav-link-product" target="_blank">
+                    <span>유아 PE 롤매트</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product4.png" alt="유아 PE 롤매트">
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/2402587673" class="nav-link nav-link-product" target="_blank">
+                    <span>PVC양면매트</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product7.png" alt="PVC양면매트">
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/4200445704" class="nav-link nav-link-product" target="_blank">
+                    <span>애견 PVC롤매트</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product5.png" alt="애견 PVC롤매트">
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/5334057201" class="nav-link nav-link-product" target="_blank">
+                    <span>PVC양면매트(비글)</span>
+                    <div class="nav-product-thumb">
+                        <img src="assets/images/product6.png" alt="PVC양면매트(비글)">
+                    </div>
+                </a>
+
+                <div class="nav-divider"></div>
+
                 <a href="pages/calculator.html" class="nav-link">견적계산기</a>
-                <a href="pages/contact.html" class="nav-link">고객센터</a>
+                <a href="#footer" class="nav-link">고객센터</a>
+
+                <div class="nav-divider"></div>
+
                 <a href="https://brand.naver.com/ddasaroom" class="nav-link nav-cta" target="_blank">
                     <i class="fas fa-shopping-bag"></i> 스토어 가기
                 </a>
@@ -100,7 +138,7 @@
                         </div>
                         <div class="hero-actions">
                             <div class="hero-cta-btn">
-                                자세히 보기
+                                상품 보러가기
                             </div>
                         </div>
                     </a>
@@ -121,7 +159,7 @@
                         </div>
                         <div class="hero-actions">
                             <div class="hero-cta-btn">
-                                자세히 보기
+                                상품 보러가기
                             </div>
                         </div>
                     </a>
@@ -142,7 +180,7 @@
                         </div>
                         <div class="hero-actions">
                             <div class="hero-cta-btn">
-                                자세히 보기
+                                상품 보러가기
                             </div>
                         </div>
                     </a>
@@ -200,6 +238,27 @@
         </div>
     </section>
 
+    <!-- 캘린더 섹션 -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">따사룸 쇼핑라이브</h2>
+                <p class="section-subtitle">네이버 쇼핑라이브에서 따사룸의 제품을 만나보세요</p>
+            </div>
+            <div class="calendar-wrapper">
+                <div id="mobile-calendar"></div>
+            </div>
+            <div id="live-schedule-list" class="live-schedule-list"></div>
+            <div id="live-info" class="live-info" style="display: none;">
+                <div class="live-badge">
+                    <i class="fas fa-video"></i>
+                    <span>라이브 방송 예정</span>
+                </div>
+                <p class="live-time" id="live-time-text">방송 시간: 오후 2시</p>
+            </div>
+        </div>
+    </section>
+
     <!-- 유아매트 섹션 -->
     <section class="products-section">
         <div class="container">
@@ -208,44 +267,45 @@
                 <p class="section-subtitle">아이들의 안전을 최우선으로 생각한 부드럽고 안전한 매트</p>
             </div>
             <div class="product-grid">
-                <a href="https://brand.naver.com/ddasaroom" target="_blank" class="product-card">
+                <a href="https://brand.naver.com/ddasaroom/products/6092903705" target="_blank" class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
+                        <img src="assets/images/product1.png" alt="유아 PVC롤매트" class="product-img">
                     </div>
                     <div class="product-details">
                         <h4 class="product-name">유아 PVC롤매트</h4>
                         <p class="product-desc">부드럽고 안전한 PVC 소재</p>
                     </div>
                 </a>
-                <a href="https://brand.naver.com/ddasaroom" target="_blank" class="product-card">
+                <a href="https://brand.naver.com/ddasaroom/products/5994906898" target="_blank" class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
+                        <img src="assets/images/product2.png" alt="PE 퍼즐매트" class="product-img">
                     </div>
                     <div class="product-details">
                         <h4 class="product-name">PE 퍼즐매트</h4>
                         <p class="product-desc">조립식 퍼즐 형태의 안전 매트</p>
                     </div>
                 </a>
-                <a href="https://brand.naver.com/ddasaroom" target="_blank" class="product-card">
+                <a href="https://brand.naver.com/ddasaroom/products/5569937047" target="_blank" class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
+                        <img src="assets/images/product3.png" alt="TPU매트" class="product-img">
                     </div>
                     <div class="product-details">
                         <h4 class="product-name">TPU매트</h4>
                         <p class="product-desc">고급 TPU 소재의 아기 매트</p>
                     </div>
                 </a>
-                <a href="https://brand.naver.com/ddasaroom" target="_blank" class="product-card">
+                <a href="https://brand.naver.com/ddasaroom/products/6710830644" target="_blank" class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
+                        <img src="assets/images/product4.png" alt="유아 PE 롤매트" class="product-img">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-name">유아 PE 롤매트</h4>
+                        <p class="product-desc">친환경 PE 소재의 롤매트</p>
+                    </div>
+                </a>
+                <a href="https://brand.naver.com/ddasaroom/products/2402587673" target="_blank" class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/product7.png" alt="PVC양면매트" class="product-img">
                     </div>
                     <div class="product-details">
                         <h4 class="product-name">PVC양면매트</h4>
@@ -264,26 +324,22 @@
                 <p class="section-subtitle">강아지의 활동 공간을 위한 내구성 뛰어난 매트</p>
             </div>
             <div class="product-grid">
-                <a href="https://brand.naver.com/ddasaroom" target="_blank" class="product-card">
+                <a href="https://brand.naver.com/ddasaroom/products/4200445704" target="_blank" class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
+                        <img src="assets/images/product5.png" alt="반려견 PVC롤매트" class="product-img">
                     </div>
                     <div class="product-details">
-                        <h4 class="product-name">반려견 PVC롤매트</h4>
-                        <p class="product-desc">반려견 전용 미끄럼 방지 매트</p>
+                        <h4 class="product-name">애견 PVC롤매트</h4>
+                        <p class="product-desc">애견 전용 미끄럼 방지 매트</p>
                     </div>
                 </a>
-                <a href="https://brand.naver.com/ddasaroom" target="_blank" class="product-card">
+                <a href="https://brand.naver.com/ddasaroom/products/5334057201" target="_blank" class="product-card">
                     <div class="product-image">
-                        <div class="product-placeholder">
-                            <i class="fas fa-image"></i>
-                        </div>
+                        <img src="assets/images/product6.png" alt="PVC양면매트(비글)" class="product-img">
                     </div>
                     <div class="product-details">
                         <h4 class="product-name">PVC양면매트(비글)</h4>
-                        <p class="product-desc">양면 PVC 소재의 반려견 매트</p>
+                        <p class="product-desc">양면 PVC 소재의 강아지 매트</p>
                     </div>
                 </a>
             </div>
@@ -291,30 +347,109 @@
     </section>
 
     <!-- 브랜드 소개 섹션 -->
-    <section class="brand-section">
+    <section class="brand-section" id="brand">
+        <!-- 브랜드 인트로 띠 -->
+        <div class="brand-intro-banner">
+            <div class="brand-intro-line"></div>
+            <div class="brand-intro-content">
+                <img src="assets/logo/logo_black.png" alt="따사룸" class="brand-intro-logo">
+            </div>
+            <div class="brand-intro-line"></div>
+        </div>
+
         <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">20년, 매트만 연구했습니다</h2>
+                <p class="section-subtitle">대한민국 매트의 표준, 따사룸이 만듭니다.</p>
+            </div>
+
             <div class="brand-content">
-                <div class="brand-video">
-                    <video class="brand-video-player" autoplay muted loop playsinline>
-                        <source src="assets/video/brand_factory.mp4" type="video/mp4">
-                        영상을 지원하지 않는 브라우저입니다.
-                    </video>
-                    <div class="video-overlay"></div>
-                    <div class="brand-info">
-                        <p class="brand-year">since 2006</p>
-                        <h2 class="brand-title">오직 매트만을 생각한<br>매트제조 전문기업</h2>
+                <!-- 벤토 그리드: 이미지 영역 -->
+                <div class="brand-bento-grid">
+                    <!-- 왼쪽: 큰 세로형 이미지 (공장 영상) -->
+                    <div class="brand-main-image">
+                        <video class="brand-video-player" autoplay muted loop playsinline>
+                            <source src="assets/video/brand_factory.mp4" type="video/mp4">
+                            영상을 지원하지 않는 브라우저입니다.
+                        </video>
+                        <div class="brand-image-overlay"></div>
+                        <div class="brand-overlay-text">
+                            <p class="brand-since">SINCE 2006</p>
+                            <h3 class="brand-overlay-title">오직 매트만을 생각한<br>매트제조 전문기업</h3>
+                        </div>
+                    </div>
+
+                    <!-- 우측: 작은 가로형 이미지 2개 -->
+                    <div class="brand-side-images">
+                        <div class="brand-image-card">
+                            <img src="assets/images/brand1.png" alt="따사룸 브랜드" class="brand-side-img">
+                        </div>
+                        <div class="brand-image-card">
+                            <img src="assets/images/brand2.png" alt="따사룸 제조" class="brand-side-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 특장점: 가로 3단 그리드 -->
+                <div class="brand-features">
+                    <div class="brand-feature-item">
+                        <span class="brand-feature-number">01</span>
+                        <h3 class="brand-feature-title">타협 없는 안전함</h3>
+                        <p class="brand-feature-desc">아이 피부에 닿으니까,<br>유해물질 '제로' 원칙</p>
+                    </div>
+
+                    <div class="brand-feature-item">
+                        <span class="brand-feature-number">02</span>
+                        <h3 class="brand-feature-title">거품 뺀 공장가</h3>
+                        <p class="brand-feature-desc">유통 마진 없이<br>공장에서 바로 집으로</p>
+                    </div>
+
+                    <div class="brand-feature-item">
+                        <span class="brand-feature-number">03</span>
+                        <h3 class="brand-feature-title">20년의 디테일</h3>
+                        <p class="brand-feature-desc">수만 번의 테스트로 완성된<br>최적의 쿠션감</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 고객센터 섹션 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">고객센터</h2>
+                <p class="section-subtitle">궁금한 점이 있으시면 편하게 문의해 주세요</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- 전화 상담 -->
+                <a href="tel:1600-7417" class="contact-card">
+                    <span class="contact-label">전화상담</span>
+                    <div class="contact-icon-wrapper">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <span class="contact-button">전화 걸기</span>
+                </a>
+
+                <!-- 네이버 톡톡 -->
+                <a href="https://talk.naver.com/ct/wc8a2i" target="_blank" class="contact-card">
+                    <span class="contact-label">네이버톡톡상담</span>
+                    <div class="contact-icon-wrapper">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <span class="contact-button">톡톡 시작하기</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- 푸터 -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>따사룸</h3>
+                    <img src="assets/logo/logo_white.png" alt="따사룸" class="footer-logo">
                     <p>프리미엄 유아ㆍ반려견 매트 전문 브랜드</p>
                     <p class="footer-contact">
                         <strong>고객센터</strong> 1600-7417<br>
@@ -371,6 +506,90 @@
         </a>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        // 모바일 캘린더 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 로컬 시간대 기준으로 날짜 문자열 생성 (YYYY-MM-DD)
+            const getLocalDateString = (date) => {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            };
+
+            // 라이브 방송 일정 (하드코딩)
+            const liveSchedule = {
+                '2025-12-09': { time: '13:00', liveId: '1775203' },
+                '2025-12-16': { time: '13:00', liveId: '1787298' },
+                '2025-12-23': { time: '13:00', liveId: '1787300' }
+            };
+
+            const liveDates = Object.keys(liveSchedule);
+
+            const calendar = flatpickr("#mobile-calendar", {
+                locale: "ko",
+                dateFormat: "Y년 m월 d일",
+                defaultDate: new Date(),
+                minDate: "today",
+                inline: true,
+                mode: "single",
+                disableMobile: false,
+                monthSelectorType: "static",
+                animate: true,
+                clickOpens: false,
+                onDayCreate: function(dObj, dStr, fp, dayElem) {
+                    const dateStr = getLocalDateString(dayElem.dateObj);
+                    if (liveDates.includes(dateStr)) {
+                        dayElem.classList.add('has-live');
+                        const schedule = liveSchedule[dateStr];
+                        const timeText = schedule.time; // "13:00" 형식
+                        dayElem.innerHTML += `<span class="live-time-badge">${timeText}</span>`;
+                    }
+                    // 날짜 클릭 이벤트 제거
+                    dayElem.style.pointerEvents = 'none';
+                }
+            });
+
+            // 라이브 일정 리스트 생성
+            const liveScheduleList = document.getElementById('live-schedule-list');
+            const formatDate = (dateStr) => {
+                const date = new Date(dateStr);
+                const month = date.getMonth() + 1;
+                const day = date.getDate();
+                return `${month}.${day}`;
+            };
+
+            const formatTime = (timeStr) => {
+                const hour = parseInt(timeStr.split(':')[0]);
+                return hour >= 12 
+                    ? `오후 ${hour === 12 ? 12 : hour - 12}시`
+                    : `오전 ${hour}시`;
+            };
+
+            let listHTML = '<div class="live-schedule-items">';
+            Object.keys(liveSchedule).sort().forEach(date => {
+                const schedule = liveSchedule[date];
+                const liveLink = schedule.liveId 
+                    ? `https://view.shoppinglive.naver.com/lives/${schedule.liveId}`
+                    : null;
+                listHTML += `
+                    <div class="live-schedule-item">
+                        <div class="live-schedule-info">
+                            <span class="live-date">${formatDate(date)}</span>
+                            <span class="live-time-small">${formatTime(schedule.time)}</span>
+                        </div>
+                        ${liveLink ? `
+                            <a href="${liveLink}" target="_blank" class="live-link-btn">LIVE 보기 ></a>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            listHTML += '</div>';
+            liveScheduleList.innerHTML = listHTML;
+        });
+    </script>
 </body>
 </html>
