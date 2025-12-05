@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>따사룸 매트견적 계산기</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- PC 전용 전체 배경 비디오 -->
+    <div class="pc-bg-video">
+      <video class="pc-bg-video-player" autoplay muted loop playsinline>
+        <source src="../../assets/video/main.mp4" type="video/mp4">
+        브라우저가 비디오 태그를 지원하지 않습니다.
+      </video>
+      <div class="pc-bg-video-overlay"></div>
+    </div>
+
+    <!-- PC 전용 왼쪽 사이드바 -->
+    <aside class="pc-sidebar pc-sidebar-left">
+      <div class="pc-sidebar-content">
+        <!-- 슬로건 섹션 -->
+        <div class="pc-sidebar-section pc-slogan-section">
+          <p class="pc-slogan-text">
+            안전은 더하고, 부담은 덜어낸 우리 집 첫 매트
+          </p>
+          <p class="pc-slogan-english">
+            Certified Safety, Premium Quality, Honest Price
+          </p>
+          <p class="pc-slogan-desc">
+            # 유아 롤매트   # 놀이방 퍼즐매트   # 애견 롤매트
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-wrapper">
+      <!-- 네비게이션 -->
+      <nav class="navbar" id="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="../../index.html">
+              <img src="../../assets/logo/logo_white.png" alt="ddasaroom" class="logo-white">
+              <img src="../../assets/logo/logo_black.png" alt="ddasaroom" class="logo-black">
+            </a>
+          </div>
+          <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- 토글 메뉴 -->
+        <div class="pc-toggle-menu" id="pc-toggle-menu">
+          <div class="nav-menu-content">
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="../../index.html#brand" class="nav-link">브랜드소개</a>
+
+            <div class="nav-divider"></div>
+
+            <a href="https://brand.naver.com/ddasaroom/products/6092903705" class="nav-link nav-link-product" target="_blank">
+              <span>유아 PVC롤매트</span>
+              <div class="nav-product-thumb">
+                <img src="../../assets/images/product1.png" alt="유아 PVC롤매트">
+              </div>
+            </a>
+            <a href="https://brand.naver.com/ddasaroom/products/5994906898" class="nav-link nav-link-product" target="_blank">
+              <span>PE 퍼즐매트</span>
+              <div class="nav-product-thumb">
+                <img src="../../assets/images/product2.png" alt="PE 퍼즐매트">
+              </div>
+            </a>
+            <a href="https://brand.naver.com/ddasaroom/products/4200445704" class="nav-link nav-link-product" target="_blank">
+              <span>애견 PVC롤매트</span>
+              <div class="nav-product-thumb">
+                <img src="../../assets/images/product5.png" alt="애견 PVC롤매트">
+              </div>
+            </a>
+
+            <div class="nav-divider"></div>
+
+            <a href="./index.html" class="nav-link" style="font-weight: 600; color: #d4a574;">견적계산기</a>
+            <a href="../../index.html#footer" class="nav-link">고객센터</a>
+
+            <div class="nav-divider"></div>
+
+            <a href="https://brand.naver.com/ddasaroom" class="nav-link nav-cta" target="_blank">
+              <i class="fas fa-shopping-bag"></i> 스토어 가기
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- 히어로 섹션 -->
+      <section class="hero">
+        <div class="hero-content-static">
+          <div class="hero-background">
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-content">
+            <div class="hero-text-overlay">
+              <h1 class="hero-main-title">셀프시공 견적계산기</h1>
+              <p class="hero-subtitle-line">우리집 셀프시공 견적이 어려우셨다면?</p>
+              <p class="hero-desc-line">이제 간단한 입력으로 견적을 산출해보세요.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 메인 컨텐츠 -->
+      <main class="main-content">
+        <!-- 기존 헤더 제거됨 -->
+
+        <div class="layout-wrapper">
+          <!-- 왼쪽: 입력 영역 -->
+          <div class="layout-left">
+            <section class="card">
+              <h2>제품 선택 <span class="step-label">Step 1</span></h2>
+
+              <!-- 따사룸 제품 -->
+              <div class="product-tabs">
+                <div class="product-tab-item">
+                  <button class="product-tab-btn active" data-product="babyRoll">
+                    <div class="product-tab-image" style="background-image: url('./images/product_01.jpg')"></div>
+                  </button>
+                  <span class="product-tab-label">유아 롤매트</span>
+                </div>
+                <div class="product-tab-item">
+                  <button class="product-tab-btn" data-product="petRoll">
+                    <div class="product-tab-image" style="background-image: url('./images/product_02.jpg')"></div>
+                  </button>
+                  <span class="product-tab-label">애견 롤매트</span>
+                </div>
+                <div class="product-tab-item">
+                  <button class="product-tab-btn" data-product="puzzle">
+                    <div class="product-tab-image" style="background-image: url('./images/product_03.jpg')"></div>
+                  </button>
+                  <span class="product-tab-label">퍼즐매트</span>
+                </div>
+              </div>
+
+            </section>
+
+            <section class="card">
+              <h2>두께 선택 <span class="step-label">Step 2</span></h2>
+              <div id="thickness-selector" class="thickness-tabs">
+                <!-- 동적으로 생성됨 -->
+              </div>
+            </section>
+
+
+            <section class="card">
+              <h2>공간 입력 <span class="step-label">Step 3</span></h2>
+
+              <div id="spaces-container"></div>
+
+              <div class="button-group">
+                <button id="add-space" class="secondary">+ 공간 추가</button>
+              </div>
+            </section>
+          </div>
+
+          <!-- 오른쪽: 견적 결과 -->
+          <div class="layout-right">
+            <section class="card">
+              <h2>견적 결과</h2>
+
+              <div class="result">
+                <div style="margin-bottom: 12px;"><strong>총 구성</strong></div>
+                <div id="total-composition" style="margin-left: 20px; margin-bottom: 12px;">-</div>
+                <div style="margin-top: 16px;"><strong>총 수량 및 가격</strong></div>
+                <div id="total-summary" style="margin-left: 20px;">-</div>
+              </div>
+
+              <div class="action-buttons">
+                <button id="copy-estimate" class="action-btn secondary-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  견적 복사
+                </button>
+                <a id="purchase-link" href="#" target="_blank" class="action-btn primary-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                  제품 구매하기
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <!-- 푸터 -->
+      <footer class="footer" id="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <img src="../../assets/logo/logo_white.png" alt="따사룸" class="footer-logo">
+              <p>프리미엄 유아ㆍ반려견 매트 전문 브랜드</p>
+              <p class="footer-contact">
+                <strong>고객센터</strong> 1600-7417<br>
+                평일 오전 9:00 ~ 오후 5:00<br>
+                (점심시간 12:00 ~ 13:00)<br>
+                토, 일, 공휴일 휴무<br>
+                <strong>FAX</strong> 031-712-6833
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>회사정보</h4>
+              <p class="footer-info">
+                (주)대승아이앤피<br>
+                대표 최석수<br>
+                개인정보관리책임자 임홍순<br>
+                사업자 등록번호 113-86-05213<br>
+                통신판매업 신고번호<br>
+                제 2017-충북음성군-70호
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>주소</h4>
+              <p class="footer-info">
+                27642 충청북도 음성군<br>
+                금왕읍 금일로 259
+              </p>
+            </div>
+            <div class="footer-section">
+              <h4>계좌안내</h4>
+              <p class="footer-info">
+                국민은행 710801-01-374433<br>
+                농협은행 355-0061-4650-23<br>
+                예금주 (주)대승아이앤피
+              </p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>COPYRIGHT ⓒ (주)대승아이앤피, ALL RIGHTS RESERVED.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- 플로팅 버튼 -->
+    <div class="floating-buttons">
+      <a href="https://brand.naver.com/ddasaroom" target="_blank" class="floating-btn store-floating" title="스토어 이동하기">
+        <i class="fas fa-shopping-bag"></i>
+        <span>스토어</span>
+      </a>
+      <a href="https://talk.naver.com/ct/wc8a2i" target="_blank" class="floating-btn consult-floating" title="상담 하기">
+        <i class="fas fa-comments"></i>
+        <span>상담</span>
+      </a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/product-config.js"></script>
+    <script src="./js/prices.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/calculations.js"></script>
+    <script src="./js/visualization.js"></script>
+    <script src="./app.js"></script>
+    <script>
+      // 네비게이션 스크롤 효과
+      document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const toggleMenu = document.getElementById('pc-toggle-menu');
+
+        // 스크롤 시 네비게이션 배경 변경
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // 햄버거 메뉴 토글
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('active');
+          toggleMenu.classList.toggle('active');
+        });
+
+        // 메뉴 링크 클릭 시 메뉴 닫기
+        const navLinks = toggleMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            toggleMenu.classList.remove('active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
