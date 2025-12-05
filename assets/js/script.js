@@ -8,6 +8,13 @@ const floatingButtons = document.querySelector('.floating-buttons');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     toggleMenu.classList.toggle('active');
+    
+    // 토글 메뉴 활성화 시 배경 스크롤 방지 (토글 메뉴 내부는 스크롤 가능)
+    if (toggleMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 });
 
 // 메뉴 링크 클릭 시 메뉴 닫기
@@ -15,6 +22,7 @@ document.querySelectorAll('#pc-toggle-menu .nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         toggleMenu.classList.remove('active');
+        document.body.style.overflow = '';
     });
 });
 
@@ -24,6 +32,7 @@ document.addEventListener('keydown', (e) => {
         if (toggleMenu.classList.contains('active')) {
             hamburger.classList.remove('active');
             toggleMenu.classList.remove('active');
+            document.body.style.overflow = '';
         }
     }
 });
@@ -37,6 +46,7 @@ document.addEventListener('click', (e) => {
     if (isMenuOpen && clickedOutside) {
         hamburger.classList.remove('active');
         toggleMenu.classList.remove('active');
+        document.body.style.overflow = '';
     }
 });
 
